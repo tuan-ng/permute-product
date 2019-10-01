@@ -1,19 +1,28 @@
 const { permute, product } = require("./index");
 
 test("permute an empty set", () => {
-  const a = new Set(permute([]));
+  const x = permute([]);
+  expect(x).toHaveLength(1);
+
+  const a = new Set(x);
   const b = new Set([[]]);
   expect(a).toEqual(b);
 });
 
 test("permute a set of one elements", () => {
-  const a = new Set(permute([1]));
+  const x = permute([1]);
+  expect(x).toHaveLength(1);
+
+  const a = new Set(x);
   const b = new Set([[1]]);
   expect(a).toEqual(b);
 });
 
 test("permute a bigger set", () => {
-  const a = new Set(permute([1, 2, 3]));
+  const x = permute([1, 2, 3]);
+  expect(x).toHaveLength(6);
+
+  const a = new Set(x);
   const b = new Set([
     [1, 2, 3],
     [2, 1, 3],
@@ -30,13 +39,19 @@ test("product that involves an empty set", () => {
 });
 
 test("product of a set of one element and a bigger set", () => {
-  const a = new Set(product([[1], [2, 3]]));
+  const x = product([[1], [2, 3]]);
+  expect(x).toHaveLength(2);
+
+  const a = new Set(x);
   const b = new Set([[1, 2], [1, 3]]);
   expect(a).toEqual(b);
 });
 
 test("product of bigger sets", () => {
-  const a = new Set(product([[1, 2], [3, 4, 5]]));
+  const x = product([[1, 2], [3, 4, 5]]);
+  expect(x).toHaveLength(6);
+
+  const a = new Set(x);
   const b = new Set([[1, 3], [1, 4], [1, 5], [2, 3], [2, 4], [2, 5]]);
   expect(a).toEqual(b);
 });
