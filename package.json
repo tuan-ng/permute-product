@@ -1,0 +1,14 @@
+{
+  "name": "permutation-product",
+  "version": "1.0.0",
+  "description": "permutation and product",
+  "main": "index.js",
+  "author": "tn",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
