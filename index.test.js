@@ -1,15 +1,11 @@
 const { permute, product } = require("./index");
 
 test("permute an empty set", () => {
-  const a = new Set(permute([]));
-  const b = new Set([[]]);
-  expect(a).toEqual(b);
+  expect(permute([])).toEqual([[]]);
 });
 
 test("permute a set of one elements", () => {
-  const a = new Set(permute([1]));
-  const b = new Set([[1]]);
-  expect(a).toEqual(b);
+  expect(permute([1])).toEqual([[1]]);
 });
 
 test("permute a bigger set", () => {
