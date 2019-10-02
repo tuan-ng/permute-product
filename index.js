@@ -14,7 +14,7 @@ const permute = arr => {
     .flat();
 };
 
-// a is an array of arrays, e.g. [[A, B], [C, D]]
+// a is an array of arrays, e.g. [[1, 2], [3, 4]]
 const product = a => {
   if (a.length == 0) return [[]];
   return a[0].map(x => product(a.slice(1)).map(y => [x, ...y])).flat();
